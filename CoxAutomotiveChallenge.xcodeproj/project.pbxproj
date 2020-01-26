@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250DF11E23DD1DD6002721B2 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DF11D23DD1DD6002721B2 /* Vehicle.swift */; };
+		250DF12023DD3F9F002721B2 /* DealerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DF11F23DD3F9F002721B2 /* DealerViewController.swift */; };
+		250DF12223DD40FE002721B2 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DF12123DD40FE002721B2 /* DataModel.swift */; };
+		250DF12423DD4356002721B2 /* Dealers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DF12323DD4356002721B2 /* Dealers.swift */; };
 		25B9845423DC18D4002A7F4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B9845323DC18D4002A7F4B /* AppDelegate.swift */; };
 		25B9845623DC18D4002A7F4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B9845523DC18D4002A7F4B /* SceneDelegate.swift */; };
 		25B9845823DC18D4002A7F4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B9845723DC18D4002A7F4B /* ViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		250DF11D23DD1DD6002721B2 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		250DF11F23DD3F9F002721B2 /* DealerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerViewController.swift; sourceTree = "<group>"; };
+		250DF12123DD40FE002721B2 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		250DF12323DD4356002721B2 /* Dealers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealers.swift; sourceTree = "<group>"; };
 		25B9845023DC18D4002A7F4B /* CoxAutomotiveChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoxAutomotiveChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B9845323DC18D4002A7F4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25B9845523DC18D4002A7F4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +69,12 @@
 				25B9845323DC18D4002A7F4B /* AppDelegate.swift */,
 				25B9845523DC18D4002A7F4B /* SceneDelegate.swift */,
 				25B9845723DC18D4002A7F4B /* ViewController.swift */,
+				250DF11D23DD1DD6002721B2 /* Vehicle.swift */,
+				250DF12323DD4356002721B2 /* Dealers.swift */,
 				25B9845923DC18D4002A7F4B /* Main.storyboard */,
+				250DF11F23DD3F9F002721B2 /* DealerViewController.swift */,
 				25B9846723DC1F39002A7F4B /* SwaggerCommunication.swift */,
+				250DF12123DD40FE002721B2 /* DataModel.swift */,
 				25B9845C23DC18D6002A7F4B /* Assets.xcassets */,
 				25B9845E23DC18D6002A7F4B /* LaunchScreen.storyboard */,
 				25B9846123DC18D6002A7F4B /* Info.plist */,
@@ -141,9 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250DF12423DD4356002721B2 /* Dealers.swift in Sources */,
+				250DF12223DD40FE002721B2 /* DataModel.swift in Sources */,
 				25B9845823DC18D4002A7F4B /* ViewController.swift in Sources */,
 				25B9845423DC18D4002A7F4B /* AppDelegate.swift in Sources */,
 				25B9845623DC18D4002A7F4B /* SceneDelegate.swift in Sources */,
+				250DF12023DD3F9F002721B2 /* DealerViewController.swift in Sources */,
+				250DF11E23DD1DD6002721B2 /* Vehicle.swift in Sources */,
 				25B9846823DC1F39002A7F4B /* SwaggerCommunication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
