@@ -22,17 +22,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntk-fj-WHA">
-                                <rect key="frame" x="97" y="458.5" width="220" height="30"/>
-                                <state key="normal" title="Fetch Dealership &amp; Vehicle Data"/>
+                                <rect key="frame" x="79.5" y="458.5" width="255" height="30"/>
+                                <state key="normal" title="Fetch New Dealership &amp; Vehicle Data"/>
                                 <connections>
                                     <action selector="fetchDatasetWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Sz-yi-aDG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjw-qo-0kY">
+                                <rect key="frame" x="152" y="533" width="110" height="30"/>
+                                <state key="normal" title="Current Dataset"/>
+                                <connections>
+                                    <action selector="fetchDatasetWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kAI-vs-55C"/>
+                                    <segue destination="c3l-BZ-F1o" kind="presentation" id="P4n-Zo-Zqv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8Qg-u1-mcw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6hY-j6-Eug"/>
+                            <constraint firstItem="Qjw-qo-0kY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="UQ2-jd-vBW"/>
                             <constraint firstItem="Ntk-fj-WHA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bU6-Iu-W2D"/>
+                            <constraint firstItem="Qjw-qo-0kY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k80-wc-TNB"/>
                             <constraint firstItem="8Qg-u1-mcw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="mdH-Op-OwA"/>
                             <constraint firstItem="Ntk-fj-WHA" firstAttribute="top" secondItem="8Qg-u1-mcw" secondAttribute="bottom" constant="50" id="qCd-EZ-Giu"/>
                         </constraints>
@@ -48,11 +58,11 @@
             <objects>
                 <viewController id="c3l-BZ-F1o" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uSp-25-LY2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zG6-7o-FYk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
