@@ -9,16 +9,12 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class InitialViewController: UIViewController {
     let comm = SwaggerComm.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
-        //NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"MyEntity"];
-        //NSError *error = nil;
-        //return [self.managedObjectContext countForFetchRequest:fetchRequest error:&error];
         if let delegate = UIApplication.shared.delegate as? AppDelegate {
             let context = delegate.persistentContainer.newBackgroundContext()
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>.init(entityName: "Vehicle")

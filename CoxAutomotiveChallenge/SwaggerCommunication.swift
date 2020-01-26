@@ -160,18 +160,60 @@ class SwaggerComm {
                         if let datasetObjectID = strongSelf.currentDatasetObjectID, let currentDatasetObject = try context.existingObject(with: datasetObjectID) as? Dataset {
                             currentDatasetObject.addToVehicles(newVehicle)
                         }
+                        // now that we have a newVehicle object, see if there's a corresponding dealer object and if not, we'll go get that information...
+                        strongSelf.createDealerObjectIfNecessaryFor(datasetID: datasetID, dealerID: newVehicle.dealerID)
                         try context.save() //make sure to save your data once decoding is complete
                     } catch let error {
                         Swift.print("couldn't decode or save \(error.localizedDescription)")
                     }
                 }
- //                   let newVehicle = try JSONDecoder().decode(Vehicle.self, from: responseData)
-                    // a singleton? Sure, it could be CoreData if I didn't have a sick family member at home to take care of this weekend
-  //                  VehicleData.shared.vehicles.append(newVehicle)
-  //                  Swift.print("newVehicle id is \(newVehicle.vehicleID) and dealerID is \(newVehicle.dealerID)")
-   //                 if DealersData.shared.dealers.contains(where: { $0.dealerID == newVehicle.dealerID }) == false {
-   //                     Swift.print("Dealer \(newVehicle.dealerID) doesn't exist in the Dealers array")
-   //                 }
+            }
+        }
+    }
+    
+    func createDealerObjectIfNecessaryFor(datasetID: String, dealerID: Int32) {
+        Swift.print("in createDealerObjectIfNecessary")
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Dealer")
+        fetchRequest.predicate = NSPredicate(format: "dealerID = %ld", dealerID)
+
+        if let container = persistentContainer {
+            do {
+                let moc = container.viewContext
+                let dealers = try moc.fetch(fetchRequest)
+                assert(dealers.count < 2) // we shouldn't have any duplicates in CD
+
+                if dealers.isEmpty {
+                    
+                    Swift.print("creating new dealer object for \(dealerID)")
+                    guard let dealersInfoURL = URL(string: baseURL + "/" + datasetID + "/dealers/\(dealerID)") else { return }
+                    var request = URLRequest(url: dealersInfoURL)
+
+                    request.httpMethod = "GET"
+
+                    talkToBackendForData(request: request) { [weak self] (data, error) in
+                        #warning ("do we want to strongSelf here and if so, why?")
+                        guard let strongSelf = self else {
+                          return
+                        }
+                        if let responseData = data, let container = strongSelf.persistentContainer {
+                            container.performBackgroundTask { (context) in
+                                let decoder = JSONDecoder()
+                                decoder.userInfo[.context] = context
+
+                                do {
+                                    _ = try decoder.decode(Dealer.self, from: responseData)
+                                    try context.save() //make sure to save your data once decoding is complete
+                                } catch let error {
+                                   Swift.print("couldn't decode or save \(error.localizedDescription)")
+                               }
+                            }
+                        }
+                    }
+                }
+            } catch {
+                // handle error
+                Swift.print("couldn't fetch any dealers from CoreData")
             }
         }
     }

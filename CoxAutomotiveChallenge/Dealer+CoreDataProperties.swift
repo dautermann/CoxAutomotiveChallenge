@@ -13,11 +13,4 @@ import CoreData
 
 extension Dealer {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Dealer> {
-        return NSFetchRequest<Dealer>(entityName: "Dealer")
-    }
-
-    @NSManaged public var dealerID: Int32
-    @NSManaged public var name: String?
-
 }
