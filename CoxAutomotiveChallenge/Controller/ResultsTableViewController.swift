@@ -43,6 +43,11 @@ class ResultsTableViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
         
+    override func viewDidAppear(_ animated: Bool) {
+        // only allow selecting cells in the table if we are displaying dealers
+        resultTable.allowsSelection = (displaying == .dealers)
+    }
+    
     func fetchLatestFor(datasetID: String) {
         // we have a datasetID, let's fetch records associated with this dataset
         let request = NSFetchRequest<Dataset>(entityName: "Dataset")
@@ -82,5 +87,16 @@ class ResultsTableViewController: UIViewController, UITableViewDelegate, UITable
             cell = vehicleCell
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Yeah, I know I could simply "reloadData" and change the "displaying" enum to .vehicles,
+        // but maybe we'd like to allow a navigation bar or some other way to push into the vehicles table
+        // and then let the user "go back"?
+        let dealerID = dealers[indexPath.row].dealerID
+        let viewController:ResultsTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultsTableViewController") as! ResultsTableViewController
+        viewController.currentDatasetID = currentDatasetID
+        self.present(viewController, animated: false, completion: nil)
+
     }
 }

@@ -13,7 +13,7 @@ class InitialViewController: UIViewController {
     @IBOutlet var currentDatasetButton: UIButton!
     @IBOutlet var activitySpinner: UIActivityIndicatorView!
     
-    let comm = SwaggerComm.init()
+    let swaggerBackendManager = SwaggerManager.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class InitialViewController: UIViewController {
     @IBAction func fetchDataset(sender: UIButton) {
         currentDatasetButton.isHidden = true
         activitySpinner.startAnimating()
-        comm.getDataset { [weak self] (datasetID) in
+        swaggerBackendManager.getDataset { [weak self] (datasetID) in
             self?.performSegue(withIdentifier: "GoToResults", sender: nil)
             self?.activitySpinner.stopAnimating()
             self?.updateCurrentDatasetButton()
@@ -63,7 +63,7 @@ class InitialViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let resultsVC = segue.destination as? ResultsTableViewController {
-            resultsVC.managedObjectContext = comm.persistentContainer?.viewContext
+            resultsVC.managedObjectContext = swaggerBackendManager.persistentContainer?.viewContext
             if let lastDatasetID = UserDefaults.standard.string(forKey: "CurrentDatasetID") {
                 resultsVC.currentDatasetID = lastDatasetID
             }

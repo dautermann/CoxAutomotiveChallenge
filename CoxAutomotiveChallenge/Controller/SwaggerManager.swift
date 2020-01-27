@@ -1,5 +1,5 @@
 //
-//  SwaggerCommunication.swift
+//  SwaggerManager.swift
 //  CoxAutomotiveChallenge
 //
 //  Created by Michael Dautermann on 1/25/20.
@@ -24,7 +24,8 @@ extension NSManagedObject {
     }
 }
 
-class SwaggerComm {
+// I've been at roles where any controller that doesn't own a view is considered a "manager"
+class SwaggerManager {
     var currentDatasetObjectID: NSManagedObjectID?
     let baseURL = "https://api.coxauto-interview.com/api"
     let persistentContainer: NSPersistentContainer?
@@ -191,7 +192,7 @@ class SwaggerComm {
                         createDealerObjectIfNecessaryFor(datasetID: datasetID, dealerID: eachDealerID, context: backgroundContext, withinDispatchGroup: dispatchGroup)
                     }
 
-                    // don't proceed until the dispatch group returns, meaning all the dealers have been saved
+                    // don't proceed until the dispatch group returns, meaning all the dealers have been saved (cached) into CD
                     dispatchGroup.notify(queue: DispatchQueue.main, execute: { [weak self] in
                         if let closure = self?.updatedDatasetClosure {
                             closure(datasetID)
