@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		250DF12023DD3F9F002721B2 /* DealerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DF11F23DD3F9F002721B2 /* DealerViewController.swift */; };
 		250DF12D23DD4876002721B2 /* Vehicle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DF12923DD4876002721B2 /* Vehicle+CoreDataProperties.swift */; };
 		250DF12E23DD4876002721B2 /* Dealer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DF12A23DD4876002721B2 /* Dealer+CoreDataClass.swift */; };
 		250DF12F23DD4876002721B2 /* Dealer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DF12B23DD4876002721B2 /* Dealer+CoreDataProperties.swift */; };
@@ -20,10 +19,11 @@
 		25B9845D23DC18D6002A7F4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B9845C23DC18D6002A7F4B /* Assets.xcassets */; };
 		25B9846023DC18D6002A7F4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B9845E23DC18D6002A7F4B /* LaunchScreen.storyboard */; };
 		25B9846823DC1F39002A7F4B /* SwaggerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B9846723DC1F39002A7F4B /* SwaggerCommunication.swift */; };
+		25D123F123DE386400544BDA /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D123F023DE386400544BDA /* ResultsTableViewController.swift */; };
+		25D123F323DE3B3500544BDA /* DealerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D123F223DE3B3500544BDA /* DealerTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		250DF11F23DD3F9F002721B2 /* DealerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerViewController.swift; sourceTree = "<group>"; };
 		250DF12623DD474F002721B2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		250DF12823DD4876002721B2 /* Vehicle+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicle+CoreDataClass.swift"; sourceTree = "<group>"; };
 		250DF12923DD4876002721B2 /* Vehicle+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicle+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		25B9845F23DC18D6002A7F4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25B9846123DC18D6002A7F4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25B9846723DC1F39002A7F4B /* SwaggerCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwaggerCommunication.swift; sourceTree = "<group>"; };
+		25D123F023DE386400544BDA /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		25D123F223DE3B3500544BDA /* DealerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DealerTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,8 @@
 				25B9845523DC18D4002A7F4B /* SceneDelegate.swift */,
 				25B9845723DC18D4002A7F4B /* InitialViewController.swift */,
 				25B9845923DC18D4002A7F4B /* Main.storyboard */,
-				250DF11F23DD3F9F002721B2 /* DealerViewController.swift */,
+				25D123F223DE3B3500544BDA /* DealerTableViewCell.xib */,
+				25D123F023DE386400544BDA /* ResultsTableViewController.swift */,
 				25B9846723DC1F39002A7F4B /* SwaggerCommunication.swift */,
 				250DF12523DD474F002721B2 /* Model.xcdatamodeld */,
 				25B9845C23DC18D6002A7F4B /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D123F323DE3B3500544BDA /* DealerTableViewCell.xib in Resources */,
 				25B9846023DC18D6002A7F4B /* LaunchScreen.storyboard in Resources */,
 				25B9845D23DC18D6002A7F4B /* Assets.xcassets in Resources */,
 				25B9845B23DC18D4002A7F4B /* Main.storyboard in Resources */,
@@ -163,10 +167,10 @@
 				25B9845423DC18D4002A7F4B /* AppDelegate.swift in Sources */,
 				250DF15423DD59D3002721B2 /* Vehicle+CoreDataClass.swift in Sources */,
 				25B9845623DC18D4002A7F4B /* SceneDelegate.swift in Sources */,
+				25D123F123DE386400544BDA /* ResultsTableViewController.swift in Sources */,
 				250DF12E23DD4876002721B2 /* Dealer+CoreDataClass.swift in Sources */,
 				250DF12D23DD4876002721B2 /* Vehicle+CoreDataProperties.swift in Sources */,
 				250DF12F23DD4876002721B2 /* Dealer+CoreDataProperties.swift in Sources */,
-				250DF12023DD3F9F002721B2 /* DealerViewController.swift in Sources */,
 				25B9846823DC1F39002A7F4B /* SwaggerCommunication.swift in Sources */,
 				250DF15323DD56A5002721B2 /* Model.xcdatamodeld in Sources */,
 			);

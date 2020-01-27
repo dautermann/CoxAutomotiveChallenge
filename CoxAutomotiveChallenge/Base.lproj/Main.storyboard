@@ -32,13 +32,18 @@
                                 <rect key="frame" x="152" y="533" width="110" height="30"/>
                                 <state key="normal" title="Current Dataset"/>
                                 <connections>
-                                    <segue destination="c3l-BZ-F1o" kind="presentation" id="P4n-Zo-Zqv"/>
+                                    <segue destination="c3l-BZ-F1o" kind="show" identifier="GoToResults" id="P4n-Zo-Zqv"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9u3-MX-sV9">
+                                <rect key="frame" x="188.5" y="529.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8Qg-u1-mcw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6hY-j6-Eug"/>
+                            <constraint firstItem="9u3-MX-sV9" firstAttribute="centerY" secondItem="Qjw-qo-0kY" secondAttribute="centerY" id="7sL-3o-Rsb"/>
+                            <constraint firstItem="9u3-MX-sV9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KV7-TY-10S"/>
                             <constraint firstItem="Qjw-qo-0kY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="UQ2-jd-vBW"/>
                             <constraint firstItem="Ntk-fj-WHA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bU6-Iu-W2D"/>
                             <constraint firstItem="Qjw-qo-0kY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k80-wc-TNB"/>
@@ -47,15 +52,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activitySpinner" destination="9u3-MX-sV9" id="qCx-Tm-81b"/>
+                        <outlet property="currentDatasetButton" destination="Qjw-qo-0kY" id="dz7-QW-bdi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Results Table View Controller-->
         <scene sceneID="dN2-Ib-N1Q">
             <objects>
-                <viewController id="c3l-BZ-F1o" sceneMemberID="viewController">
+                <viewController id="c3l-BZ-F1o" customClass="ResultsTableViewController" customModule="CoxAutomotiveChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uSp-25-LY2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +72,76 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zG6-7o-FYk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealerCell" id="NRD-OE-QrV" customClass="DealerCell" customModule="CoxAutomotiveChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NRD-OE-QrV" id="u5l-Ji-mNd" customClass="DealerCell" customModule="CoxAutomotiveChallenge" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yst-Ne-uKn">
+                                                    <rect key="frame" x="31" y="11.5" width="352" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yst-Ne-uKn" secondAttribute="trailing" constant="11" id="9yK-IV-Hrh"/>
+                                                <constraint firstItem="yst-Ne-uKn" firstAttribute="leading" secondItem="u5l-Ji-mNd" secondAttribute="leadingMargin" constant="11" id="KTU-Q1-1QW"/>
+                                                <constraint firstItem="yst-Ne-uKn" firstAttribute="centerY" secondItem="u5l-Ji-mNd" secondAttribute="centerY" id="Wij-5a-Cne"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameAndIDLabel" destination="yst-Ne-uKn" id="ugP-fa-X4j"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="fFp-eZ-Acs" customClass="VehicleCell" customModule="CoxAutomotiveChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fFp-eZ-Acs" id="DSP-7K-hjm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tns-xK-HDA">
+                                                    <rect key="frame" x="31" y="11" width="352" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="2sa-2d-ogc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-iM-Ise">
+                                                    <rect key="frame" x="31" y="48" width="352" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="6qd-TU-PcR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tns-xK-HDA" firstAttribute="top" secondItem="DSP-7K-hjm" secondAttribute="topMargin" id="1F8-sl-kO0"/>
+                                                <constraint firstItem="qxH-iM-Ise" firstAttribute="leading" secondItem="DSP-7K-hjm" secondAttribute="leadingMargin" constant="11" id="8CP-u0-jvo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qxH-iM-Ise" secondAttribute="trailing" constant="11" id="LXN-cb-z8S"/>
+                                                <constraint firstItem="tns-xK-HDA" firstAttribute="trailing" secondItem="qxH-iM-Ise" secondAttribute="trailing" id="gFg-GJ-Cfx"/>
+                                                <constraint firstItem="tns-xK-HDA" firstAttribute="leading" secondItem="qxH-iM-Ise" secondAttribute="leading" id="kvA-hw-d58"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qxH-iM-Ise" secondAttribute="bottom" id="pRd-bC-sMV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="vehicleAndDealerIDLabel" destination="qxH-iM-Ise" id="U3T-AN-rlx"/>
+                                            <outlet property="yearMakeModelLabel" destination="tns-xK-HDA" id="N6T-sa-m4V"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="c3l-BZ-F1o" id="yvl-wC-Prz"/>
+                                    <outlet property="delegate" destination="c3l-BZ-F1o" id="xle-2S-Hit"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -74,6 +153,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cmq-bi-pH3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4Vc-IP-tho"/>
+                    <connections>
+                        <outlet property="resultTable" destination="zG6-7o-FYk" id="Qww-as-sF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbj-Fv-bUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

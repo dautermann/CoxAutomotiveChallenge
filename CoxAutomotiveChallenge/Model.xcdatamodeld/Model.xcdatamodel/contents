@@ -7,14 +7,14 @@
     </entity>
     <entity name="Dealer" representedClassName="Dealer" syncable="YES">
         <attribute name="dealerID" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
     </entity>
     <entity name="Vehicle" representedClassName="Vehicle" syncable="YES">
-        <attribute name="dealerID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="makeString" optional="YES" attributeType="String"/>
-        <attribute name="modelString" optional="YES" attributeType="String"/>
-        <attribute name="vehicleID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dealerID" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="makeString" attributeType="String"/>
+        <attribute name="modelString" attributeType="String"/>
+        <attribute name="vehicleID" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="year" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="Dataset" positionX="-36" positionY="54" width="128" height="88"/>

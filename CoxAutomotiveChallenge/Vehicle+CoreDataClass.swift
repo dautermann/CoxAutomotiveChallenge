@@ -18,8 +18,8 @@ public class Vehicle: NSManagedObject, Decodable {
 
     @NSManaged public var vehicleID: Int32
     @NSManaged public var year: Int16
-    @NSManaged public var makeString: String?
-    @NSManaged public var modelString: String?
+    @NSManaged public var makeString: String
+    @NSManaged public var modelString: String
     @NSManaged public var dealerID: Int32
 
     enum CodingKeys: String, CodingKey {

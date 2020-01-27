@@ -18,7 +18,7 @@ public class Dealer: NSManagedObject, Decodable {
     }
 
     @NSManaged public var dealerID: Int32
-    @NSManaged public var name: String?
+    @NSManaged public var name: String
 
     enum CodingKeys: String, CodingKey {
         case dealerId
