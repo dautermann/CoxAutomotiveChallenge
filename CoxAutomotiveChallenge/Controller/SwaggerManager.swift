@@ -185,6 +185,8 @@ class SwaggerManager {
                     let dealerIDarray = vehicleArray.map({ (vehicle: Vehicle) -> Int32 in
                         vehicle.dealerID
                     })
+                    // "Make sure to only fetch the dealership data once from all the vehicles." -- i.e. I turn the
+                    // dealer array into a set (no duplicates) so we only fetch the dealership data once per dataset
                     let dealerIDset = Set(dealerIDarray)
                     let dispatchGroup = DispatchGroup()
                     for eachDealerID in dealerIDset {
@@ -199,7 +201,6 @@ class SwaggerManager {
                     })
                 }
             }
-            
         } catch let error as NSError {
             Swift.print("findAllDealersIn couldn't find datasetObject for \(datasetID) - \(error.localizedDescription)")
         }

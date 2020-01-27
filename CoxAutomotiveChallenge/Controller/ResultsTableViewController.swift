@@ -11,7 +11,7 @@ import CoreData
 
 enum DisplayResultsFor {
     case dealers
-    case vehicles
+    case vehicles // would love to add an associated value to this case but maybe we can iterate later?
 }
 
 class DealerCell : UITableViewCell
@@ -96,9 +96,8 @@ class ResultsTableViewController: UIViewController, UITableViewDelegate, UITable
         // and then let the user "go back"?
         let dealerID = dealers[indexPath.row].dealerID
         let viewController:ResultsTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultsTableViewController") as! ResultsTableViewController
-        viewController.currentDatasetID = currentDatasetID
-        viewController.vehicles = vehicles
-        viewController.managedObjectContext = managedObjectContext
+        let filteredVehicles = vehicles.filter { $0.dealerID == dealerID }
+        viewController.vehicles = filteredVehicles
         viewController.displaying = .vehicles
         self.navigationController?.pushViewController(viewController, animated: true)
     }

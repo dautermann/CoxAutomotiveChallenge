@@ -19,6 +19,7 @@
 		25B9845D23DC18D6002A7F4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B9845C23DC18D6002A7F4B /* Assets.xcassets */; };
 		25B9846023DC18D6002A7F4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B9845E23DC18D6002A7F4B /* LaunchScreen.storyboard */; };
 		25B9846823DC1F39002A7F4B /* SwaggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B9846723DC1F39002A7F4B /* SwaggerManager.swift */; };
+		25B9846A23DEC2CD002A7F4B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 25B9846923DEC2CD002A7F4B /* README.md */; };
 		25D123F123DE386400544BDA /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D123F023DE386400544BDA /* ResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		25B9845F23DC18D6002A7F4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25B9846123DC18D6002A7F4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25B9846723DC1F39002A7F4B /* SwaggerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwaggerManager.swift; sourceTree = "<group>"; };
+		25B9846923DEC2CD002A7F4B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		25D123F023DE386400544BDA /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +56,7 @@
 		25B9844723DC18D4002A7F4B = {
 			isa = PBXGroup;
 			children = (
+				25B9846923DEC2CD002A7F4B /* README.md */,
 				25B9845223DC18D4002A7F4B /* CoxAutomotiveChallenge */,
 				25B9845123DC18D4002A7F4B /* Products */,
 			);
@@ -172,6 +175,7 @@
 			files = (
 				25B9846023DC18D6002A7F4B /* LaunchScreen.storyboard in Resources */,
 				25B9845D23DC18D6002A7F4B /* Assets.xcassets in Resources */,
+				25B9846A23DEC2CD002A7F4B /* README.md in Resources */,
 				25B9845B23DC18D4002A7F4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

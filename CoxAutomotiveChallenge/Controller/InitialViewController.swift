@@ -17,7 +17,15 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateCurrentDatasetButton()
+    }
 
+    func getCountOfRecords() {
+        // if you're looking at this, I used this for debugging -- usually called from viewDidLoad or viewWillAppear!
         if let delegate = UIApplication.shared.delegate as? AppDelegate {
             let context = delegate.persistentContainer.newBackgroundContext()
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>.init(entityName: "Vehicle")
@@ -35,11 +43,6 @@ class InitialViewController: UIViewController {
                Swift.print("error while trying to get count - \(error.localizedDescription)")
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateCurrentDatasetButton()
     }
 
     func updateCurrentDatasetButton() {
