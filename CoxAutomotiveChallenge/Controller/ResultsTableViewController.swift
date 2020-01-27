@@ -84,6 +84,7 @@ class ResultsTableViewController: UIViewController, UITableViewDelegate, UITable
             let vehicleForThisCell = vehicles[indexPath.row]
             let vehicleCell = tableView.dequeueReusableCell(withIdentifier: "VehicleCell", for: indexPath) as! VehicleCell
             vehicleCell.yearMakeModelLabel.text = "\(vehicleForThisCell.year) \(vehicleForThisCell.makeString) \(vehicleForThisCell.modelString)"
+            vehicleCell.vehicleAndDealerIDLabel.text = "vehicle ID:\(vehicleForThisCell.vehicleID) dealerID: \(vehicleForThisCell.dealerID)"
             cell = vehicleCell
         }
         return cell
@@ -96,7 +97,9 @@ class ResultsTableViewController: UIViewController, UITableViewDelegate, UITable
         let dealerID = dealers[indexPath.row].dealerID
         let viewController:ResultsTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultsTableViewController") as! ResultsTableViewController
         viewController.currentDatasetID = currentDatasetID
-        self.present(viewController, animated: false, completion: nil)
-
+        viewController.vehicles = vehicles
+        viewController.managedObjectContext = managedObjectContext
+        viewController.displaying = .vehicles
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

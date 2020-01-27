@@ -116,7 +116,6 @@ class SwaggerManager {
     }
 
     func getVehiclesFor(datasetID: String) {
-        Swift.print("in getVehiclesFor")
         guard let datasetURL = URL(string: baseURL + "/" + datasetID + "/vehicles") else { return }
         var request = URLRequest(url: datasetURL)
 
