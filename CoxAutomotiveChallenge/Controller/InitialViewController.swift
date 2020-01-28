@@ -66,6 +66,7 @@ class InitialViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let navigationVC = segue.destination as? UINavigationController, let resultsVC = navigationVC.topViewController as? ResultsTableViewController {
+            // pass along the managedObjectContext and any saved CurrentDatasetID from UserDefaults
             resultsVC.managedObjectContext = swaggerBackendManager.persistentContainer?.viewContext
             if let lastDatasetID = UserDefaults.standard.string(forKey: "CurrentDatasetID") {
                 resultsVC.currentDatasetID = lastDatasetID
